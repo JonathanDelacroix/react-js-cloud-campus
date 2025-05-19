@@ -1,6 +1,8 @@
-import Header from './components/Header.jsx'
-import Footer from './components/Footer.jsx'
-import Dish from './components/Dish.jsx'
+import Header from './components/Header.jsx';
+import Footer from './components/Footer.jsx';
+import Dish from './components/Dish.jsx';
+import { Container, Row } from 'react-bootstrap';
+import './assets/styles/main.scss';
 
 function App() {
 
@@ -9,6 +11,8 @@ function App() {
       <Header />
 
       <main>
+        <Container className="mainContainer">
+          <Row>
             <Dish
               image="https://cdn.pixabay.com/photo/2016/08/23/08/53/tacos-1613795_960_720.jpg"
               title="Tacos à l’unité"
@@ -24,6 +28,8 @@ function App() {
               title="Mole poblano"
               price={15}
             />
+          </Row>
+        </Container>
       </main>
 
       <Footer />
