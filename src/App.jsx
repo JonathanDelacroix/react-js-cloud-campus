@@ -11,7 +11,7 @@ function App() {
       <Header />
 
       <main>
-        <Container className="mainContainer">
+        <Container>
           <Row>
             <Dish
               image="https://cdn.pixabay.com/photo/2016/08/23/08/53/tacos-1613795_960_720.jpg"

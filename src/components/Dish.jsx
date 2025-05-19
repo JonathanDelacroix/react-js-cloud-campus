@@ -4,9 +4,9 @@ import '../assets/styles/dish.scss';
 
 function Dish ({image,title,price}) {
     return (
-        <Col>
+        <Col md={4}>
             <Card>
-                <Card.Img src={image} alt={title} className="dishImage"/>
+                <Card.Img src={image} alt={title} />
                 <Card.Body>
                 <Card.Title>{title}</Card.Title>
                 <Card.Text>
