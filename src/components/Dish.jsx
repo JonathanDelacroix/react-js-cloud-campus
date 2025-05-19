@@ -1,9 +1,9 @@
-function Dish ({image,titre,prix}) {
+function Dish ({image,title,price}) {
     return (
         <div>
-            <img src={image} alt={titre} />
-            <h3>{titre}</h3>
-            <p>{prix}€</p>
+            <img src={image} alt={title} />
+            <h3>{title}</h3>
+            <p>{price}€</p>
         </div>
     )
 }
