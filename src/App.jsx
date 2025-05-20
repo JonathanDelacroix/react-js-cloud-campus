@@ -11,23 +11,23 @@ function App() {
     {image: "https://cdn.pixabay.com/photo/2014/01/14/22/13/mexican-245240_960_720.jpg", title: "Enchiladas", price: 12, isNew: false, stock: 0},
     {image: "https://cdn.pixabay.com/photo/2021/02/04/03/57/mole-5980185_960_720.jpg", title: "Mole poblano", price: 15, isNew: false, stock: 5}
   ]
+
+  const filteredDishes = dishes.filter(dish => dish.stock > 0);
+
   return (
     <>
       <Header />
 
         <Container as="main">
           <Row>
-            {dishes.map((dish,index) =>(
-              dish.stock > 0 && (
+            {filteredDishes.map((dish,index) =>(
                 <Dish
                   key={index}
                   image={dish.image}
                   title={dish.title}
                   price={dish.price}
                   isNew={dish.isNew}
-                  stock={dish.stock}
                 />
-              )
             ))}
           </Row>
         </Container>
