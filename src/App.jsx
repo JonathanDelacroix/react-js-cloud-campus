@@ -18,14 +18,16 @@ function App() {
         <Container as="main">
           <Row>
             {dishes.map((dish,index) =>(
-              <Dish
-                key={index}
-                image={dish.image}
-                title={dish.title}
-                price={dish.price}
-                isNew={dish.isNew}
-                stock={dish.stock}
-              />
+              dish.stock > 0 && (
+                <Dish
+                  key={index}
+                  image={dish.image}
+                  title={dish.title}
+                  price={dish.price}
+                  isNew={dish.isNew}
+                  stock={dish.stock}
+                />
+              )
             ))}
           </Row>
         </Container>
