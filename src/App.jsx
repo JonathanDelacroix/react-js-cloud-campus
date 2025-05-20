@@ -19,6 +19,7 @@ function App() {
           <Row>
             {dishes.map(dish =>(
               <Dish
+                key={dish.index}
                 image={dish.image}
                 title={dish.title}
                 price={dish.price}
