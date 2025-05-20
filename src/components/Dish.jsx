@@ -7,12 +7,10 @@ function Dish ({image,title,price, isNew}) {
     return (
         <Col md={4}>
             <Card>
-                <div className="position-relative">
-                    <Card.Img src={image} alt={title} />
-                    {isNew &&
+                <Card.Img src={image} alt={title} className="position-relative"/>
+                {isNew &&
                     <Badge bg="primary" className="position-absolute top-0 end-0 m-2">Nouveau</Badge>
-                    }
-                </div>
+                }
                 <Card.Body>
                 <Card.Title>{title}</Card.Title>
                 <Card.Text>
