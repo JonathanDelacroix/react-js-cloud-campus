@@ -2,7 +2,7 @@ import Container from 'react-bootstrap/Container';
 import Nav from 'react-bootstrap/Nav';
 import Navbar from 'react-bootstrap/Navbar';
 import '../assets/styles/header.scss';
-import logo from '../assets/images/man-3262834_960_720.webp'
+import logo from '../assets/images/logo.webp'
 
 function Header() {
 
