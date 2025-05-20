@@ -2,6 +2,7 @@ import Container from 'react-bootstrap/Container';
 import Nav from 'react-bootstrap/Nav';
 import Navbar from 'react-bootstrap/Navbar';
 import '../assets/styles/header.scss';
+import logo from '../assets/images/man-3262834_960_720.webp'
 
 function Header() {
 
@@ -9,7 +10,7 @@ function Header() {
     <header>
       <Navbar expand="lg" className="bg-body-tertiary">
         <Container>
-          <Navbar.Brand href="/"><img src="https://cdn.pixabay.com/photo/2018/03/26/14/18/man-3262834_960_720.png" alt="Un mexicain avec un chapeau qui joue de la guitare" /></Navbar.Brand>
+          <Navbar.Brand href="/"><img src={logo} alt="Un mexicain avec un chapeau qui joue de la guitare" /></Navbar.Brand>
           <Navbar.Toggle aria-controls="basic-navbar-nav" />
           <Navbar.Collapse id="basic-navbar-nav">
             <Nav className="ms-auto">
