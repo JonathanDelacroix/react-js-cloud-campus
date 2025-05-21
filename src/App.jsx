@@ -4,9 +4,11 @@ import Dish from './components/Dish.jsx';
 import { Container, Row } from 'react-bootstrap';
 import './assets/styles/main.scss';
 import Button from 'react-bootstrap/Button';
-import { useState } from 'react';
+import {useRef, useEffect, useState,useContext } from 'react';
+import { CartContext } from "./context/CartContext.jsx";
 
 function App() {
+  const { cartCount } = useContext(CartContext);
 
   const dishes = [
     {image: "https://cdn.pixabay.com/photo/2016/08/23/08/53/tacos-1613795_960_720.jpg", title: "Tacos à l’unité", price: 3, isNew: true, stock: 12},
@@ -22,10 +24,17 @@ function App() {
 
   const filteredDishes = dishes.filter(dish => dish.stock > 0 && (!showNewOnly || dish.isNew));
 
+  const prevCartCountRef = useRef(cartCount);
+
+  useEffect(() => {
+    prevCartCountRef.current = cartCount; // Stocke la valeur avant le re-render
+  }, [cartCount]);
+
   return (
     <>
       <Header/>
       <Container as="main">
+        <p>Le panier est passé de {prevCartCountRef.current} à {cartCount} articles.</p>
         <Button variant="primary" onClick={() => handleShowNewOnly()}>
           {showNewOnly ? 'Voir tous les plats' : 'Nouveautés uniquement'}
         </Button>
