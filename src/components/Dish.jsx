@@ -3,8 +3,12 @@ import Col from 'react-bootstrap/Col';
 import '../assets/styles/dish.scss';
 import Badge from 'react-bootstrap/Badge';
 import Button from 'react-bootstrap/Button';
+import { useContext } from "react";
+import { CartContext } from "../context/CartContext";
 
-function Dish ({image,title,price,isNew,addToCart}) {
+function Dish ({image,title,price,isNew}) {
+
+    const { addToCart } = useContext(CartContext);
 
     return (
         <Col md={4} >
@@ -16,7 +20,7 @@ function Dish ({image,title,price,isNew,addToCart}) {
                 <Card.Body>
                     <Card.Title>{title}</Card.Title>
                     <Card.Text>{price}€</Card.Text>
-                    <Button variant="outline-warning" onClick={() => addToCart()}>Ajouter au panier</Button>
+                    <Button variant="outline-warning" onClick={() => {addToCart()}}>Ajouter au panier</Button>
                 </Card.Body>
             </Card>
         </Col>
