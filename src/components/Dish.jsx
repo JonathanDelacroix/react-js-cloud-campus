@@ -4,11 +4,7 @@ import '../assets/styles/dish.scss';
 import Badge from 'react-bootstrap/Badge';
 import Button from 'react-bootstrap/Button';
 
-function Dish ({image,title,price,isNew}) {
-    
-    const handleClick = (message) => {
-    alert(message);
-    };
+function Dish ({image,title,price,isNew,addToCart}) {
 
     return (
         <Col md={4} >
@@ -20,7 +16,7 @@ function Dish ({image,title,price,isNew}) {
                 <Card.Body>
                     <Card.Title>{title}</Card.Title>
                     <Card.Text>{price}€</Card.Text>
-                    <Button variant="outline-warning" onClick={() => handleClick(`Le plat ${title} est maintenant dans votre panier`)}>Ajouter au panier</Button>
+                    <Button variant="outline-warning" onClick={() => addToCart()}>Ajouter au panier</Button>
                 </Card.Body>
             </Card>
         </Col>
